@@ -65,9 +65,5 @@ public class Parcel {
         return weight;
     }
 
-    // I need composite design pattern for items in parcel, parcel in warehouse/van (?)
-    // Now, you cannot ADD or REMOVE an item from a Parcel, only instantiate one with a set of items in it.
-    // In factory --> parcel exists? Add it's details to a list and then remove it?
-    //
 
 }
