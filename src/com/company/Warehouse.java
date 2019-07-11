@@ -2,7 +2,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Warehouse { // THIS NEEDS TO BE A SINGLETON, OR, AN INTERFACE/ABSTRACT CLASS!!! Or, it should be the Main class?
+public class Warehouse { 
     ArrayList<Parcel> parcels;
 
     public Warehouse() {
