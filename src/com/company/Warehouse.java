@@ -7,21 +7,10 @@ public class Warehouse {
     ArrayList<Parcel> parcels;
 
     public Warehouse() {
-        parcels = new ArrayList<Parcel>();
+        parcels = new ArrayList<>();
     }
 
     public void sendParcels(ArrayList<Parcel> p) {
-
-        /*
-        for(Parcel i : p) {
-            if(parcels.contains(i)) {
-                parcels.remove(i);
-            } else {
-                System.out.println("A parcel for "+i.getName() + "is not in Warehouse");
-            }
-        }
-         */
-
         for (Iterator<Parcel> iterator = p.iterator(); iterator.hasNext();) {
             Parcel parcel = iterator.next();
             if(parcels.contains(parcel))
