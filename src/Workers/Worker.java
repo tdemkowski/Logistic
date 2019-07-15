@@ -1,9 +1,9 @@
 package Workers;
 
-public interface Worker { 
+
+public interface Worker {
 
     int getSalary();
     int getHoursWorked();
-
 
 }

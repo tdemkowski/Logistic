@@ -1,6 +1,9 @@
-package com.company;
+package Warehouse;
+
+import Workers.*;
+
+
 import java.util.ArrayList;
-import java.lang.NullPointerException;
 
 public class Main {
 
@@ -12,6 +15,7 @@ public class Main {
         Company OTHER = Company.OTHER;
 
         Warehouse WH = new Warehouse();
+
         Item I1 = new Item("oil",10,1);
         Item I2 = new Item("cream", 12,3);
         Item I3 = new Item("brush",20,2);
@@ -46,7 +50,8 @@ public class Main {
         Parcel P4 = new Parcel(OTHER, "22 Portney Road, Kingwood", "Doctor K", listP4);
         Parcel P5 = new Parcel(AVON, "22 Portney Road, Kingwood", "Doctor K", listP5);
         Parcel P6 = new Parcel(OTHER, "22 Portney Road, Kingwood", "Doctor K", listP6);
-        WH.addParcel(P1);
+
+        WH.addParcel(P1); // can't anymore! a Worker of the Warehouse must do this!!!
         WH.addParcel(P2);
         WH.addParcel(P3);
         WH.addParcel(P4);
@@ -73,6 +78,9 @@ public class Main {
         System.out.println("----- sent all parcels -----");
         WH.info();
         WH.listItems();
+
+
+        Worker Bob = new Courier();
 
     }
 }

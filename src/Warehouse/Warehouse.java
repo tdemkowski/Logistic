@@ -1,9 +1,10 @@
-package com.company;
+package Warehouse;
+
+
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Iterator;
 
-public class Warehouse {
+public class Warehouse { // if its abstract, then how do I access the functions? Workers need to extend it?
     ArrayList<Parcel> parcels;
 
     public Warehouse() {

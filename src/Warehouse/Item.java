@@ -1,4 +1,6 @@
-package com.company;
+package Warehouse;
+
+import Warehouse.Warehouse;
 
 public class Item {
     private String description;
