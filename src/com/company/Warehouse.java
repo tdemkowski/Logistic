@@ -1,8 +1,9 @@
 package com.company;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Iterator;
 
-public class Warehouse { // THIS NEEDS TO BE A SINGLETON, OR, AN INTERFACE/ABSTRACT CLASS!!! Or, it should be the Main class?
+public class Warehouse {
     ArrayList<Parcel> parcels;
 
     public Warehouse() {
@@ -10,16 +11,26 @@ public class Warehouse { // THIS NEEDS TO BE A SINGLETON, OR, AN INTERFACE/ABSTR
     }
 
     public void sendParcels(ArrayList<Parcel> p) {
+
+        /*
         for(Parcel i : p) {
             if(parcels.contains(i)) {
-                i.setInFactory(false);
-                parcels.remove(p);
+                parcels.remove(i);
             } else {
                 System.out.println("A parcel for "+i.getName() + "is not in Warehouse");
             }
-
         }
+         */
+
+        for (Iterator<Parcel> iterator = p.iterator(); iterator.hasNext();) {
+            Parcel parcel = iterator.next();
+            if(parcels.contains(parcel))
+                iterator.remove();
+        }
+
     }
+
+
 
     public ArrayList<Parcel> getParcels() {
         return parcels;
@@ -31,13 +42,18 @@ public class Warehouse { // THIS NEEDS TO BE A SINGLETON, OR, AN INTERFACE/ABSTR
 
     public void listItems() {
         System.out.println("Warehouse inventory: ");
-        for(Parcel p : parcels) {
-            System.out.println("Parcel for " + p.getName() + " contains:");
-            if(p.getItems().size() != 0) {
-                p.listItems();
-            } else { System.out.println("    nothing"); }
+        if(parcels.size() == 0)
+            System.out.println("    empty");
+        else {
+            for(Parcel p : parcels) {
+                System.out.println("Parcel for " + p.getName() + " contains:");
+                if(p.getItems().size() != 0) {
+                    p.listItems();
+                } else { System.out.println("    nothing"); }
+            }
         }
-        System.out.println("");
+
+        System.out.println(""); // adds space
     }
 
     public void info() {

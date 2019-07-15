@@ -7,7 +7,6 @@ public class Parcel {
     private String postAddress;
     private String name;
     private ArrayList<Item> items;
-    private boolean inFactory;
     private int weight=0;
     private int value=0;
 
@@ -16,7 +15,6 @@ public class Parcel {
         postAddress = address;
         name = Name;
         items = Items;
-        inFactory = true;
 
         for(Item i : items) {
             weight += i.getWeight();
@@ -39,10 +37,6 @@ public class Parcel {
 
     public ArrayList getItems() {
         return items;
-    }
-
-    public void setInFactory(boolean A) {
-        inFactory = A;
     }
 
     public int getValue() {

@@ -59,11 +59,20 @@ public class Main {
         list.add(P3);
         list.add(P4);
         list.add(P5);
-        list.add(P6);
+
+        System.out.println("----- start -----");
+        WH.info();
+        WH.listItems();
 
         WH.sendParcels(list);
+        System.out.println("----- sent list of parcels -----");
         WH.listItems();
         WH.info();
+
+        WH.sendParcels(WH.getParcels());
+        System.out.println("----- sent all parcels -----");
+        WH.info();
+        WH.listItems();
 
     }
 }
